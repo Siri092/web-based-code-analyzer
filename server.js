@@ -7,8 +7,19 @@ const { spawn } = require("child_process");
 const app = express();
 
 /* ============================== */
+/* MIDDLEWARE */
 app.use(cors());
 app.use(express.json());
+
+/* HOME ROUTE */
+app.get("/", (req, res) => {
+    res.send("Code Analyzer API is running 🚀");
+});
+
+/* ANALYZE ROUTE */
+app.post("/analyze", async (req, res) => {
+    // your logic
+});
 
 /* ============================== */
 function compileCode(code) {
